@@ -5,7 +5,10 @@
     <priority>1700</priority>
     <position>0</position>
     <status>active</status>
+    <name>Gallery Dropzone</name>
+    <description>Gallery Dropzone for Blog Section</description>
     <default_language>en</default_language>
+    <dependencies>blog</dependencies>
     <auto_install>MULTIVENDOR,ULTIMATE</auto_install>
 
     <queries>
