@@ -1,0 +1,30 @@
+<?xml version="1.0"?>
+<addon scheme="3.0">
+    <id>blog_gallery_dropzone</id>
+    <version>1.0</version>
+    <priority>1700</priority>
+    <position>0</position>
+    <status>active</status>
+    <default_language>en</default_language>
+    <auto_install>MULTIVENDOR,ULTIMATE</auto_install>
+
+    <queries>
+        <item>DROP TABLE IF EXISTS ?:blog_images;</item>
+        <item>
+            CREATE TABLE `?:blog_images` (
+              `id` int(7) NOT NULL AUTO_INCREMENT,
+              `name` varchar(255) NOT NULL,
+              `type` varchar(55) NOT NULL,
+              `size` mediumint(8) unsigned NOT NULL DEFAULT '0',
+              `file` varchar(255) NOT NULL,
+              `thumb` varchar(255) NOT NULL,
+              `sort_order` mediumint(8) unsigned NOT NULL DEFAULT '0',
+              `blog_post_id` mediumint(8) unsigned NOT NULL DEFAULT '0',
+              PRIMARY KEY (`id`)
+            ) ENGINE=MyISAM DEFAULT CHARSET=utf8;
+        </item>
+        <item for="uninstall">
+            DROP TABLE IF EXISTS ?:blog_images;
+        </item>
+    </queries>
+</addon>
