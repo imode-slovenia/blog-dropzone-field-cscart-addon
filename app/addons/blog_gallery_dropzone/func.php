@@ -24,11 +24,6 @@ function fn_get_all_gallery_images($blog_post_id)
     return false;    
 }
 
-function fn_gallery_update_image($image, $blog_post_id)
-{
-    
-}
-
 function fn_update_blog_gallery_add_link($image_id, $blog_post_id)
 {
     $data = [

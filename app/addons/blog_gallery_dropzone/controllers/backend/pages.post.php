@@ -14,8 +14,8 @@ if ($mode == 'add') {
     
     if ($_SERVER['REQUEST_METHOD'] == 'GET')
     {
-        $additional_images = fn_get_all_gallery_images($blog_post_id);
-        Tygh::$app['view']->assign('main_pairs', $additional_images);
+        $additional_images = fn_get_image_pairs($blog_post_id, 'blog', 'A', true, true, DESCR_SL);
+        Tygh::$app['view']->assign('image_pairs', $additional_images);
     }
     
     if ($_SERVER['REQUEST_METHOD'] == 'POST')
@@ -42,8 +42,8 @@ if ($mode == 'add') {
             }
         }
         
-        if (isset($_REQUEST['file_product_add_additional_image_detailed'])) {
-            foreach ($_REQUEST['file_product_add_additional_image_detailed'] as $additional_image) {
+        if (isset($_REQUEST['file__detailed'])) {
+            foreach ($_REQUEST['file__detailed'] as $additional_image) {
                 
                 if (Storage::instance('custom_files')->isExist($additional_image)) {
                     
